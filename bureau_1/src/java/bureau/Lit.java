@@ -27,6 +27,9 @@ public class Lit implements Serializable {
     
     
     @Column
+    private boolean bidon; 
+    
+    @Column
     private boolean occupation; 
 
     public boolean getOccupation() {

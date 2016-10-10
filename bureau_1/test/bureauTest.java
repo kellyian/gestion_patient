@@ -92,8 +92,7 @@ public class bureauTest {
         List<String> test;
         test = serv.getAllUF();
         
-        System.out.println(test); 
-
+        System.out.println(test);
     }
     
 //    @Test

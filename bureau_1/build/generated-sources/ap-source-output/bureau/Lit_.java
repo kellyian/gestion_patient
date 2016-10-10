@@ -9,6 +9,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 public abstract class Lit_ {
 
 	public static volatile SingularAttribute<Lit, Boolean> occupation;
+	public static volatile SingularAttribute<Lit, Boolean> bidon;
 	public static volatile SingularAttribute<Lit, Integer> id;
 
 }
