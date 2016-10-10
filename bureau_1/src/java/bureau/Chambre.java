@@ -27,7 +27,8 @@ public class Chambre implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    
+   
+
     
     /* l'annotation cascade = CascadeType.MERGE garantit que la mise à jour de l'objet
     se fera en mettant aussi à jour ses sous-objets. Par contre l'effacement de l'objet
@@ -41,9 +42,10 @@ public class Chambre implements Serializable {
         return lits;
     }
 
-    public void setCrayons(List<Lit> lits) {
+    public void setLits(List<Lit> lits) {
         this.lits = lits;
     }
+
     
     public int getId() {
         return id;
