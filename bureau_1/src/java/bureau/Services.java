@@ -44,11 +44,41 @@ public class Services {
         
         UniteFonctionnelle uf = new UniteFonctionnelle() ;   
         uf.setNom_uf(nom_unite);
-        
+        uf.setChambres(creationChambre_uf());
         em.getTransaction( ).begin( );
         em.persist(uf);
         em.getTransaction().commit();  
         }
+    }
+    
+    public List<Chambre> creationChambre_uf(){
+        
+        List<Chambre> liste_ch = new ArrayList(); 
+        
+        for(int i=0 ; i<2 ; i++){
+            Chambre ch = new Chambre() ; 
+            List<Lit> liste_lits = new ArrayList(); 
+            
+            for(int j=0 ; j<2 ; j++ ){
+                Lit lit = new Lit(); 
+                lit.setOccupation(false);
+                
+                em.getTransaction().begin(); 
+                em.persist(lit);
+                em.getTransaction().commit(); 
+                
+                liste_lits.add(lit);
+            }
+            ch.setLits(liste_lits);
+            liste_ch.add(ch);
+            
+            em.getTransaction().begin(); 
+            em.persist(ch);
+            em.getTransaction().commit(); 
+            
+        }
+        
+        return liste_ch ; 
     }
     
     public List<String> getAllUF(){
